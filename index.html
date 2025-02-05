@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Autoankauf, Auto verkaufen, KFZ Ankauf, Gebrauchtwagen verkaufen">
+    <meta name="description" content="Ihr Auto unkompliziert und schnell verkaufen.">
+    <meta name="author" content="DS-Coding">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Autoankauf XYZ</title>
+  </head>
+  <body>
+    <div style="border:1px black solid;padding-top: 20px;padding-bottom: 20px;background-image: url(images/1694715422792_ergebnis.webp);background-repeat: no-repeat;background-size:cover">
+      <div class="form-container" style="border: 5px black solid;border-radius: 5%;">
+        <form id="formular">
+          <div style="object-position: 300px 0px;">
+          <img src="images/auto_formular.png" alt="Form" width="300px" class="carform">
+          </div>
+          <!-- Formularabschnitt 1: Fahrzeugdaten -->
+          <div class="form-section" id="fahrzeugdaten">
+            <h2>Fahrzeugdaten</h2>
+            <label for="hersteller">Hersteller:</label>
+            <select id="hersteller" name="hersteller">
+              <option value="audi">Audi</option>
+              <option value="bmw">BMW</option>
+              <option value="mercedes">Mercedes-Benz</option>
+              <option value="volkswagen">Volkswagen</option>
+              <option value="ford">Ford</option>
+              <option value="toyota">Toyota</option>
+              <option value="honda">Honda</option>
+              <option value="nissan">Nissan</option>
+              <option value="hyundai">Hyundai</option>
+              <option value="kia">Kia</option>
+              <option value="chevrolet">Chevrolet</option>
+              <option value="volvo">Volvo</option>
+              <option value="subaru">Subaru</option>
+              <option value="mazda">Mazda</option>
+              <option value="mitsubishi">Mitsubishi</option>
+              <option value="jaguar">Jaguar</option>
+              <option value="landrover">Land Rover</option>
+              <option value="lexus">Lexus</option>
+              <option value="tesla">Tesla</option>
+              <option value="porsche">Porsche</option>
+              <option value="fiat">Fiat</option>
+              <option value="alfa romeo">Alfa Romeo</option>
+              <option value="renault">Renault</option>
+              <option value="peugeot">Peugeot</option>
+              <option value="citroen">Citroën</option>
+              <option value="skoda">Škoda</option>
+              <option value="seat">SEAT</option>
+              <option value="mini">MINI</option>
+              <option value="jeep">Jeep</option>
+              <option value="smart">smart</option>
+              <option value="maserati">Maserati</option>
+              <option value="sonstige">Sonstige</option>
+              <!-- Weitere Autohersteller einfügen -->
+            </select>
+            <label for="modell">Modell:</label>
+            <input type="text" id="modell" name="modell" />
+            <label for="leistung">Leistung:</label>
+            <input type="text" id="leistung" name="leistung" />
+            <select id="leistungEinheit" name="leistungEinheit">
+              <option value="PS">PS</option>
+              <option value="kW">kW</option>
+            </select>
+            <label for="getriebe">Getriebe:</label>
+            <select id="getriebe" name="getriebe">
+              <option value="automatik">Automatik</option>
+              <option value="schaltgetriebe">Schaltgetriebe</option>
+              <option value="andere">Andere</option>
+              <!-- Weitere Optionen einfügen -->
+            </select>
+            <label for="kraftstoff">Kraftstoff:</label>
+            <select id="kraftstoff" name="kraftstoff">
+              <option value="benzin">Benzin</option>
+              <option value="diesel">Diesel</option>
+              <option value="elektro">Elektro</option>
+              <option value="hybrid">Hybrid</option>
+              <!-- Weitere Optionen einfügen -->
+            </select>
+            <!-- Weiter-Button -->
+            <button type="button" onclick="nachsteAbschnitt('zusatzinfos')">
+              Weiter
+            </button>
+          </div>
+  
+          <!-- Formularabschnitt 2: Zusätzliche Informationen (standardmäßig ausgeblendet) -->
+          <div class="form-section" id="zusatzinfos" style="display: none">
+            <h2>Zusätzliche Informationen</h2>
+            <label for="erstzulassung">Erstzulassung (Monat und Jahr):</label>
+            <select id="erstzulassungMonat" name="erstzulassungMonat">
+              <option value="01">Januar</option>
+              <option value="02">Februar</option>
+              <option value="03">März</option>
+              <option value="04">April</option>
+              <option value="05">Mai</option>
+              <option value="06">Juni</option>
+              <option value="07">Juli</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">Oktober</option>
+              <option value="11">November</option>
+              <option value="12">Dezember</option>
+            </select>
+            <select id="erstzulassungJahr" name="erstzulassungJahr">
+              <option value="01">2023</option>
+              <option value="02">2022</option>
+              <option value="03">2021</option>
+              <option value="04">2020</option>
+              <option value="05">2019</option>
+              <option value="06">2018</option>
+              <option value="07">2017</option>
+              <option value="08">2016</option>
+              <option value="09">2015</option>
+              <option value="10">2014</option>
+              <option value="11">2013</option>
+              <option value="12">2012</option>
+              <option value="13">2011</option>
+              <option value="14">2010</option>
+              <option value="15">2009</option>
+              <option value="16">2008</option>
+              <option value="17">2007</option>
+              <option value="18">2006</option>
+              <option value="19">2005</option>
+              <option value="20">2004</option>
+              <option value="21">2003</option>
+              <option value="22">2002</option>
+              <option value="23">2001</option>
+              <option value="24">2000</option>
+              <option value="25">1999</option>
+              <option value="26">1998</option>
+              <option value="27">1997</option>
+              <option value="28">1996</option>
+              <option value="29">1995</option>
+              <option value="30">1994</option>
+              <option value="31">1993</option>
+              <option value="32">1992</option>
+              <option value="33">1991</option>
+              <option value="34">1990</option>
+              <option value="35">vor 1990</option>
+            </select>
+            <label for="kilometerstand">Kilometerstand:</label>
+            <input type="text" id="kilometerstand" name="kilometerstand" />
+            <label for="anmerkungen">Anmerkungen:</label>
+            <textarea
+              id="anmerkungen"
+              name="anmerkungen"
+              rows="4"
+              cols="50"
+            ></textarea>
+            <label for="preisvorstellung">Preisvorstellung:</label>
+            <input type="text" id="preisvorstellung" name="preisvorstellung" />
+            <!-- Weiter-Button -->
+            <button type="button" onclick="nachsteAbschnitt('kontaktdaten')">
+              Weiter
+            </button>
+          </div>
+  
+          <!-- Formularabschnitt 3: Persönliche Daten (standardmäßig ausgeblendet) -->
+          <div class="form-section" id="kontaktdaten" style="display: none">
+            <h2>Persönliche Daten</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" />
+            <label for="strasse">Straße:</label>
+            <input type="text" id="strasse" name="strasse" />
+            <label for="hausnummer">Hausnummer:</label>
+            <input type="text" id="hausnummer" name="hausnummer" />
+            <label for="plz">PLZ:</label>
+            <input type="text" id="plz" name="plz" />
+            <label for="ort">Ort:</label>
+            <input type="text" id="ort" name="ort" />
+            <label for="telefon">Telefon:</label>
+            <input type="text" id="telefon" name="telefon" />
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" />
+            <!-- Absenden-Button nur auf dieser Seite anzeigen -->
+            <button type="button" onclick="absenden()">Absenden</button>
+          </div>
+        </form>
+        </div>
+        <script>
+          let currentSection = 0;
+          const formSections = document.querySelectorAll(".form-section");
+          const formData = {}; // Hier speichern wir die Formulardaten
+  
+          // Funktion, um zum nächsten Abschnitt zu wechseln
+          function nachsteAbschnitt(zielAbschnitt) {
+            if (zielAbschnitt === "zusatzinfos") {
+              // Hier können Sie Validierungslogik für den zweiten Abschnitt hinzufügen, wenn gewünscht
+              formData.erstzulassungMonat =
+                document.getElementById("erstzulassungMonat").value;
+              formData.erstzulassungJahr =
+                document.getElementById("erstzulassungJahr").value;
+              formData.kilometerstand =
+                document.getElementById("kilometerstand").value;
+              formData.anmerkungen = document.getElementById("anmerkungen").value;
+              formData.preisvorstellung =
+                document.getElementById("preisvorstellung").value;
+              // Erfassen Sie weitere Daten aus diesem Abschnitt
+            } else if (zielAbschnitt === "kontaktdaten") {
+              // Hier können Sie Validierungslogik für den dritten Abschnitt hinzufügen, wenn gewünscht
+              formData.name = document.getElementById("name").value;
+              formData.strasse = document.getElementById("strasse").value;
+              formData.hausnummer = document.getElementById("hausnummer").value;
+              formData.plz = document.getElementById("plz").value;
+              formData.ort = document.getElementById("ort").value;
+              formData.telefon = document.getElementById("telefon").value;
+              formData.email = document.getElementById("email").value;
+              // Erfassen Sie weitere Daten aus diesem Abschnitt
+            }
+  
+            formSections[currentSection].style.display = "none";
+            currentSection++;
+  
+            if (currentSection < formSections.length) {
+              formSections[currentSection].style.display = "block";
+            } else if (currentSection === formSections.length) {
+              formSections[currentSection - 1].style.display = "block";
+            }
+          }
+  
+          // Funktion zum Absenden des Formulars
+          function absenden() {
+            // Hier können Sie Validierungslogik für den letzten Abschnitt hinzufügen, wenn gewünscht
+            formData.name = document.getElementById("name").value;
+            formData.strasse = document.getElementById("strasse").value;
+            formData.hausnummer = document.getElementById("hausnummer").value;
+            formData.plz = document.getElementById("plz").value;
+            formData.ort = document.getElementById("ort").value;
+            formData.telefon = document.getElementById("telefon").value;
+            formData.email = document.getElementById("email").value;
+            // Erfassen Sie weitere Daten aus diesem Abschnitt
+  
+            // Senden Sie die Daten an das PHP-Skript
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "send_form.php", true);
+            xhr.setRequestHeader(
+              "Content-Type",
+              "application/json;charset=UTF-8"
+            );
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                // Hier können Sie eine Bestätigungsseite anzeigen oder andere Aktionen ausführen
+                alert("Formular wurde erfolgreich abgesendet!");
+              }
+            };
+            xhr.send(JSON.stringify(formData));
+          }
+        </script>
+      </div>
+    <header class="firstdiv">
+      <div class="header">
+        <h1 class="ak" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Autoankauf XYZ</h1>
+        <div class="ak2">
+          <img src="images/phone.png" alt="Phone" width="25px" height="25px" style="border: 1px white dotted"/>
+          <span class="phone outline" style="color: yellow">Tel.: <span class="outline" style="text-decoration: underline;letter-spacing: 1px;color:yellow">+49123456789<span></span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="flex" style="margin-top: 0px;border: 1px black solid;padding-top:20px;padding-bottom: 20px;">
+        <div style="width: 25%;" class="flexchild1">
+        <h2>
+          Willkommen bei Autoankauf XYZ - Ihrem zuverlässigen Partner für den
+          Autoankauf</h2>
+          <p>Sie nach einem unkomplizierten und fairen
+          Autoankauf in Gelsenkirchen? Wir sind für Sie da! Bei Autoankauf XYZ bieten wir Ihnen
+          eine stressfreie Möglichkeit, Ihr Fahrzeug zu verkaufen. Egal, ob Sie
+          ein gebrauchtes Auto, einen Transporter oder ein defektes Fahrzeug
+          haben - wir kaufen Fahrzeuge aller Marken und Modelle.</p>
+        </p>
+        </div>
+        <div style="width: 25%;margin-top:20px" class="flexchild1">
+        <h2>Unsere Mission</h2>
+        <p style="padding-top: 3%;">Bei Autoankauf XYZ sind wir bestrebt, die Anforderungen unserer Kunden 
+            zu erfüllen und ihnen den bestmöglichen Service zu bieten. Unser Team 
+            besteht aus Experten im Bereich Autoankauf, die Ihnen bei jedem Schritt 
+            des Verkaufsprozesses zur Seite stehen.</p>
+        </div>
+      </div>
+      <div class="partner">
+        <h2 style="text-align: center;font-size:32px;text-shadow: 1px 1px 1px white, 1px -1px 1px white, -1px 1px 1px white,
+        -1px -1px 1px white;">Ihr Partner für den schnellen Autoankauf in Gelsenkirchen</h2>
+        <div class="flex" style="padding:10px">
+            <div class="flexchild2"><h3 class="outlineblack">Schnelle Angebotsanfrage</h3><span class="outlineblack">Füllen Sie unser einfaches Formular aus, um ein unverbindliches Angebot für Ihr Fahrzeug zu erhalten.</span></div>
+            <div class="flexchild2"><h3 class="outlineblack">Kostenlose Abholung</h3><span class="outlineblack">Wir holen Ihr Fahrzeug kostenlos an einem Ort Ihrer Wahl ab.</span></div>
+            <div class="flexchild2"><h3 class="outlineblack">Sofortige Bezahlung</h3><span class="outlineblack">Wir bezahlen Sie sofort nach Vereinbarung des Verkaufspreises.</span></div>
+            <div class="flexchild2"><h3 class="outlineblack">Papierkram erledigen</h3><span class="outlineblack">Wir kümmern uns um den gesamten Papierkram, damit Sie sich entspannen können.</span></div>
+        </div>
+      </div>
+      <div style="text-align: center;padding-top:30px;padding-bottom:30px;border:1px black solid;margin-top:0px" class="flex">
+        <div class="flexchild1">
+            <img src="images/1694715422732_ergebnis.webp" alt="Ankauf" height="250px" style="border:3px black solid">
+        </div>
+        <div class="flexchild1">
+        <h2>Kontaktieren Sie uns</h2>
+            <p>Möchten Sie Ihr Auto in Gelsenkirchen verkaufen oder haben Sie Fragen zu unserem Service? 
+            Unser Team steht Ihnen gerne zur Verfügung. Kontaktieren Sie uns über das 
+            untenstehende Formular, per Telefon oder E-Mail, und wir werden uns umgehend 
+            bei Ihnen melden.</p>
+            <button style="width: 100px;margin: 0 auto;margin-bottom: 25px;"><a href="mailto:..."><span style="color:white">E-Mail Anfrage</span></a></button>
+            </div>
+        <div class="flexchild1">
+            <img src="images/1694715422741_ergebnis.webp" alt="Ankauf" height="250px" style="border: 3px black solid;">
+        </div>
+      </div>
+    
+      <!--Display None-->
+      <div style="text-align: center;padding-top: 10px;padding-bottom: 10px;border:1px black solid;display: none;">
+        <h2>Kundenbewertungen</h2>
+        <div class="flex">
+            <div class="flexchild3"><h3>Bewertung 1</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aspernatur ad neque quaerat, placeat commodi deleniti et illo voluptates pariatur cupiditate reprehenderit, quibusdam odio ab corporis ipsam atque laborum corrupti!</p></div>
+            <div class="flexchild3"><h3>Bewertung 2</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum cumque quaerat at. Nihil quas distinctio sequi facilis saepe possimus odit aut, eaque laboriosam molestias eius rerum voluptate molestiae, vel cumque.</p></div>
+            <div class="flexchild3"><h3>Bewertung 3</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem recusandae officia unde. Minima velit tenetur suscipit consequuntur maxime necessitatibus deleniti ut cum veniam ipsam, quasi repellat aspernatur exercitationem assumenda veritatis.</p></div>
+            <div class="flexchild3"><h3>Bewertung 4</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem recusandae officia unde. Minima velit tenetur suscipit consequuntur maxime necessitatibus deleniti ut cum veniam ipsam, quasi repellat aspernatur exercitationem assumenda veritatis.</p></div>
+            <div class="flexchild3"><h3>Bewertung 5</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem recusandae officia unde. Minima velit tenetur suscipit consequuntur maxime necessitatibus deleniti ut cum veniam ipsam, quasi repellat aspernatur exercitationem assumenda veritatis.</p></div>
+            <div class="flexchild3"><h3>Bewertung 6</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem recusandae officia unde. Minima velit tenetur suscipit consequuntur maxime necessitatibus deleniti ut cum veniam ipsam, quasi repellat aspernatur exercitationem assumenda veritatis.</p></div>
+        </div>
+    </div>
+    <!-- Display none ~ Ankauf defekte-->
+    <div style="margin-top: 0px;border: 1px black solid;
+    padding-top:20px;padding-bottom: 20px;background-image: url(images/1694715422732_ergebnis.webp);
+    background-repeat: no-repeat;background-position: center;background-position: stretch;background-size: center;
+    display:none;">
+      <div class="flex" >
+        <h3 class="outlineblack">Auch Ankauf von defekten oder Unfallwagen möglich!</h3>
+      </div>
+      <div class="flex" style="padding-left:19%">
+      <div class="flexchild2">
+        <h4 class="outline">Test</h4>
+      </div>
+      <div class="flexchild2">
+        <h4 class="outline">Test</h4>
+      </div>
+      <div class="flexchild2">
+        <h4 class="outline">Test</h4>
+      </div>
+      <div class="flexchild2">
+        <h4 class="outline">Test</h4>
+      </div>
+      </div>
+    </div>
+    </main>
+    <footer>
+      <div class="flex" style="padding: 3%;margin-top:0;border: 1px black solid;">
+        <div>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+          <a href="ak_oberhausen.html">Autoankauf Oberhausen</a>
+        </div>
+        <div>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+          <a href="ak_mainz">Autoankauf Mainz</a>
+        </div>
+        <div>
+          <a href="ak_berlin">Autokauf Berlin</a>
+          <a href="ak_berlin">Autokauf Berlin</a>
+          <a href="ak_berlin">Autokauf Berlin</a>
+          <a href="ak_berlin">Autokauf Berlin</a>
+          <a href="ak_berlin">Autokauf Berlin</a>
+          <a href="ak_berlin">Autokauf Berlin</a>
+          <a href="ak_berlin">Autokauf Berlin</a>
+          <a href="ak_berlin">Autokauf Berlin</a>
+          <a href="ak_berlin">Autokauf Berlin</a>
+          <a href="ak_berlin">Autokauf Berlin</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <h6> Created by <a href="https://ds-coding.de">DS-Coding</a></h6>
+      </div>
+    </footer>
+    <div class="contact">
+      <button style="width: 49%;display:inline;height: 60px;background-color:green;"><span style="font-weight: bold;font-size: 25px;"><a href="#" style="color:black">WhatsApp</a></span></button>
+      <button style="width: 49%;display:inline;height: 60px;background-color:green;"><span style="font-weight: bold;font-size: 25px;"><a href="#" style="color:black">Telefon</a></span></button>
+    </div>
+  </body>
+</html>
